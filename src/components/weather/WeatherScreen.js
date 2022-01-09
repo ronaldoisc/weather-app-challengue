@@ -9,6 +9,7 @@ import { CitySearchedItem } from './CitySearchedItem';
 import { CardForecast } from './CardForecast';
 import { css } from "@emotion/react";
 import PulseLoader from "react-spinners/PulseLoader";
+import { Link } from 'react-router-dom';
 
 const override = css`
   display: block;
@@ -27,6 +28,11 @@ export const WeatherScreen = () => {
         dispatch(startLoadLocationWeather(dataCitySearched[0].woeid));
         dispatch(setDeactivateSearch());
         dispatch(cleanDataCitySearched())
+    }
+
+    const handleRedirect = () => {
+        window.location.href = "https://github.com/ronaldoisc"
+
     }
 
     return (
@@ -114,17 +120,11 @@ export const WeatherScreen = () => {
                                     </div>
                                 }
                             </div>
-
                         </div>
-
-                        <p className='text-center opacity-75'>Created by ronaldoisc - devChallengues.io</p>
-
+                        <p className='text-center opacity-75'>Created by   <a href="https://github.com/ronaldoisc" target="blank" >ronaldoisc</a>   - devChallengues.io</p>
                     </div>
                 </div>
             }
-
-
-
         </div>
     )
 }
