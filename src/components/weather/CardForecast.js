@@ -7,7 +7,7 @@ export const CardForecast = ({ element }) => {
     return (
         <div key={element.id} className='card-forecast'>
             {
-                moment(element.applicable_date).day() == tomorrow ?
+                moment(element.applicable_date).day() === tomorrow ?
                     <p>
                         {moment(element.applicable_date).format('[Tomorrow]')}</p>
                     :
