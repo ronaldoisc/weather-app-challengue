@@ -9,7 +9,6 @@ import { CitySearchedItem } from './CitySearchedItem';
 import { CardForecast } from './CardForecast';
 import { css } from "@emotion/react";
 import PulseLoader from "react-spinners/PulseLoader";
-import { Link } from 'react-router-dom';
 
 const override = css`
   display: block;
