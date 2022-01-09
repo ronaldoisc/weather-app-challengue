@@ -29,10 +29,7 @@ export const WeatherScreen = () => {
         dispatch(cleanDataCitySearched())
     }
 
-    const handleRedirect = () => {
-        window.location.href = "https://github.com/ronaldoisc"
 
-    }
 
     return (
         <div>
