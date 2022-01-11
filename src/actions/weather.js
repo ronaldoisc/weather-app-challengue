@@ -17,9 +17,12 @@ export const startLoadLocationWeather=(woedId)=>{
   return async(dispatch)=>{
     dispatch(uiStartLoading());
     const dataLocationWeather=await loadLocationWeatherAsync(woedId);
-    dispatch(setLocationWeather(dataLocationWeather));
-    dispatch(uiFinishLoading());
 
+    dispatch(setLocationWeather(dataLocationWeather));
+    dispatch(setDeactivateSearch());
+    dispatch(cleanLocationSearched())
+    
+    dispatch(uiFinishLoading());
   }
 }
 
@@ -41,7 +44,7 @@ export const setDeactivateSearch=()=>({
 
 });
 
-export const cleanDataCitySearched=()=>({
-  type:types.cleanDataCitySearched
+export const cleanLocationSearched=()=>({
+  type:types.cleanLocationSearched
 });
 

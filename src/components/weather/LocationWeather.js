@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import moment from 'moment';
 import { setWeatherIcon } from '../../helpers/setIcon';
-export const WeatherInfo = () => {
+export const LocationWeather = () => {
 
     const state = useSelector(state => state.weather.locationWeatherList);
 

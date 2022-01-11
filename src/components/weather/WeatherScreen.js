@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { AppBarSearchCity } from '../ui/AppBarSearchCity';
 import { AppBar } from '../ui/AppBar';
-import { WeatherInfo } from './WeatherInfo';
-import { cleanDataCitySearched, setDeactivateSearch, startLoadLocationWeather } from '../../actions/weather';
+import { LocationWeather} from './LocationWeather';
+import { startLoadLocationWeather } from '../../actions/weather';
 import { CitySearchedItem } from './CitySearchedItem';
 import { CardForecast } from './CardForecast';
 import { css } from "@emotion/react";
@@ -25,8 +25,6 @@ export const WeatherScreen = () => {
     const dispatch = useDispatch();
     const handleClickCitySearch = () => {
         dispatch(startLoadLocationWeather(dataCitySearched[0].woeid));
-        dispatch(setDeactivateSearch());
-        dispatch(cleanDataCitySearched())
     }
 
 
@@ -51,7 +49,7 @@ export const WeatherScreen = () => {
                             (activeSearchCity === false) ?
                                 <div>
                                     <AppBar />
-                                    <WeatherInfo />
+                                    <LocationWeather />
                                 </div>
                                 :
                                 <div className='mt-2 p-1'>
@@ -99,7 +97,12 @@ export const WeatherScreen = () => {
                                         <div className='card-highlight '>
                                             <p>Humidity</p>
                                             <h1>{consolidated_weather[0].humidity}%</h1>
-                                            <input type="range" readOnly value={consolidated_weather[0].humidity} />
+                                          
+                                               <label htmlFor="range">
+                                                   
+                                                <input name='range' type="range" readOnly value={consolidated_weather[0].humidity} />
+                                               </label>
+                                        
 
                                         </div>
                                         <div className='card-highlight'>
@@ -117,7 +120,10 @@ export const WeatherScreen = () => {
                                 }
                             </div>
                         </div>
-                        <p className='text-center opacity-75'>Created by   <a href="https://github.com/ronaldoisc" target="blank" >ronaldoisc</a>   - devChallengues.io</p>
+                        <footer className='footer'>
+
+                          <small><a className='footer__link' href="https://github.com/ronaldoisc" target="blank" >ronaldoisc</a>   - devChallengues.io</small>
+                        </footer>
                     </div>
                 </div>
             }

@@ -5,7 +5,7 @@ import { setWeatherIcon } from '../../helpers/setIcon';
 export const CardForecast = ({ element }) => {
     const tomorrow = moment().add(1, 'days').format('d')
     return (
-        <div key={element.id} className='card-forecast'>
+        <div key={element.id} className='card-forecast__item'>
             {
                 moment(element.applicable_date).day() === tomorrow ?
                     <p>
@@ -15,8 +15,8 @@ export const CardForecast = ({ element }) => {
             }
             <img src={
                 setWeatherIcon(element.weather_state_abbr)
-            } alt={element.weather_state_abbr} height={100}/>
-            <div className='degress'>
+            } alt={element.weather_state_abbr} height={90}/>
+            <div className='card-forecast--degress'>
                 <p>
                     <span> {Math.round(element.max_temp)} </span>
                     <span>°c</span>

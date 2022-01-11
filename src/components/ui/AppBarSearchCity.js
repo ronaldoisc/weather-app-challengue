@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { cleanDataCitySearched, setDeactivateSearch, startLoadLocationSearch} from '../../actions/weather';
+import { cleanLocationSearched, setDeactivateSearch, startLoadLocationSearch} from '../../actions/weather';
 
 
 
@@ -24,7 +24,7 @@ export const AppBarSearchCity = () => {
     
    const handleClose=()=>{
        dispatch(setDeactivateSearch());
-       dispatch(cleanDataCitySearched());
+       dispatch(cleanLocationSearched());
    }
     return (
         <div>
@@ -32,12 +32,13 @@ export const AppBarSearchCity = () => {
                 <button onClick={handleClose}
                  className='material-icons bg-transparent text-light  border-0'>close</button>
             </div>
-            <div className='d-flex flex-row justify-content-evenly'>
-                <div className='input-search d-flex align-items-center'>
+            <div className='searcher'>
+                <div className='searcher__item'>
                     <span className='material-icons'>search</span>
+                 
                     <input
                      type="text" 
-                     className=''
+                     className='searcher__input'
                      placeholder='search location' 
                      name='city'
                      value={city}
@@ -45,11 +46,10 @@ export const AppBarSearchCity = () => {
                      
                       />
                 </div>
-                <div>
-                  <button onClick={handleSearchCity} className='btn btn-primary p-3 mx-2'>Search</button>
-                </div>
-
+               
+                  <button onClick={handleSearchCity} className='searcher__button p-3 mx-2'>Search</button>
             </div>
+          
 
 
         </div>

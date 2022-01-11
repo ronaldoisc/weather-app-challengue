@@ -4,6 +4,7 @@
     --color-gray:rgba(255, 255, 255, 0.2);
     --color-ligth-gray:rgba(110, 112, 122, 1);
     --color-white:white;
+    --color-blue:rgba(60, 71, 233, 1);
    
 }
 html,body{
@@ -80,21 +81,38 @@ div>div>.sidebar{
     outline: none;
     padding: 0.6rem;
 }
-.input-search{
-    background-color: var(--secondary-color);
-    border: 1px solid #E7E7EB;
-    color:var(--color-gray);
-    padding: 0.5rem;
-    color: #E7E7EB;
+
+/* Searcher */
+.searcher{
+    display: flex;
+    flex-flow: row wrap;
 }
-.input-search input{
+.searcher__item{
+    width: 70%;
+    padding: 0.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--color-ligth-gray);
+    background-color: var(--secondary-color);
+
+    
+}
+.searcher__item .searcher__input{
     background-color: var(--secondary-color);
     border: none;
     outline: none;
     color: var(--color-white);
 }
-.input-search::placeholder{
+.searcher__input::placeholder{
     color: var(--color-gray);
+}
+.searcher .searcher__button{
+    color: white;
+    background-color: var(--color-blue);
+    outline: none;
+    border: none;
 }
 .box-container{
     padding: 0.4rem;
@@ -132,7 +150,7 @@ div .btn-gps{
 
 }
 
-.card-forecast{
+.card-forecast__item{
     align-items: center;
     background-color: var(--secondary-color);
     display: flex;
@@ -140,32 +158,30 @@ div .btn-gps{
     font-weight: bold;
     justify-content: space-around;
     margin: 1rem;
-    padding: 2rem;
-    width: 41%;
+    padding: 1.8rem;
+    width: 39%;
     color: #E7E7EB;;
   
     
 
 }
 @media (min-width: 768px) {
-    .card-forecast{
+    .card-forecast__item{
         color: #E7E7EB;
         margin: 1rem; 
         padding: 1rem;
         width: 15%;
-    
-       
-         
       }
     
 }
 
 
-.card-forecast img{
+.card-forecast__item img{
    width: 100%;
+   object-fit: contain;
    
 }
-.card-forecast .degress{
+.card-forecast__item .card-forecast--degress{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -173,7 +189,7 @@ div .btn-gps{
     
 }
 @media (min-width: 768px) {
-    .card-forecast .degress{
+    .card-forecast__item .card-forecast--degress{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -181,7 +197,7 @@ div .btn-gps{
         align-items: center;
     } 
 }
-.card-forecast .degress span{
+.card-forecast__item .card-forecast--degress span{
     line-height: 18.78px;
     font-weight: 600;
     font-family: 'Raleway', sans-serif;
@@ -230,4 +246,15 @@ div .btn-gps{
 .material-icons.md-light{
     color: var(--color-white);
 }
+.footer{
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
+}
+.footer>small>.footer__link{
+    color: white;
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
 

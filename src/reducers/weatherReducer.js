@@ -31,7 +31,7 @@ export const weatherReducer=(state=initialState,action)=>{
                 activeSearchCity:false
             }
 
-        case types.cleanDataCitySearched:
+        case types.cleanLocationSearched:
             return {
                 ...state,
                 city:'',
