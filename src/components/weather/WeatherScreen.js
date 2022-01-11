@@ -122,7 +122,7 @@ export const WeatherScreen = () => {
                         </div>
                         <footer className='footer'>
 
-                          <small><a className='footer__link' href="https://github.com/ronaldoisc" target="blank" >ronaldoisc</a>   - devChallengues.io</small>
+                          <small>Created by <a className='footer__link' href="https://github.com/ronaldoisc" target="blank" >ronaldoisc</a>   - devChallengues.io</small>
                         </footer>
                     </div>
                 </div>
