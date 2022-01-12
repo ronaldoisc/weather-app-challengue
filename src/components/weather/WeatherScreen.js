@@ -36,7 +36,7 @@ export const WeatherScreen = () => {
                 <div className='vh-100 d-flex justify-content-center align-items-center'>
                     <div>
                         <PulseLoader color={"#6E9CD3"} loading={loading} css={override} size={15} margin={2} />
-                        <p>Wait please...</p>
+                        <p className='fw-bold'>Wait please...</p>
                     </div>
                 </div>
 

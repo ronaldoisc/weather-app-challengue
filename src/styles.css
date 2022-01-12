@@ -241,21 +241,21 @@ div .btn-gps{
     }
 }
 
+.footer{
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    margin: 10px;
+}
+.footer>small>.footer__link{
+    color: white;
+    text-decoration: underline;
+   
+}
 
 
 /* Material Icons */
 .material-icons.md-light{
     color: var(--color-white);
 }
-.footer{
-    text-align: center;
-    color: white;
-    font-size: 1.8rem;
-}
-.footer>small>.footer__link{
-    color: white;
-    font-size: 1.8rem;
-    text-decoration: none;
-}
-
-
