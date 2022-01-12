@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { AppBarSearchCity } from '../ui/AppBarSearchCity';
 import { AppBar } from '../ui/AppBar';
-import { LocationWeather} from './LocationWeather';
+import { LocationWeather } from './LocationWeather';
 import { startLoadLocationWeather } from '../../actions/weather';
 import { CitySearchedItem } from './CitySearchedItem';
 import { CardForecast } from './CardForecast';
@@ -36,7 +36,7 @@ export const WeatherScreen = () => {
                 <div className='vh-100 d-flex justify-content-center align-items-center'>
                     <div>
                         <PulseLoader color={"#6E9CD3"} loading={loading} css={override} size={15} margin={2} />
-                        <p>Wait plase...</p>
+                        <p>Wait please...</p>
                     </div>
                 </div>
 
@@ -54,10 +54,17 @@ export const WeatherScreen = () => {
                                 :
                                 <div className='mt-2 p-1'>
                                     <AppBarSearchCity />
+
                                     {
-                                        dataCitySearched.map(element => {
-                                            return <CitySearchedItem key={element.woeid} element={element} handleClickCitySearch={handleClickCitySearch} />
-                                        })
+                                        dataCitySearched != null ?
+                                            dataCitySearched.map(element => {
+                                                return <CitySearchedItem key={element.woeid} element={element} handleClickCitySearch={handleClickCitySearch} />
+                                            })
+                                            :
+                                            <div className='box-container mt-5 pointer'>
+                                                <span>{`Location not available :(`} </span>
+
+                                            </div>
 
                                     }
 
@@ -97,12 +104,12 @@ export const WeatherScreen = () => {
                                         <div className='card-highlight '>
                                             <p>Humidity</p>
                                             <h1>{consolidated_weather[0].humidity}%</h1>
-                                          
-                                               <label htmlFor="range">
-                                                   
+
+                                            <label htmlFor="range">
+
                                                 <input name='range' type="range" readOnly value={consolidated_weather[0].humidity} />
-                                               </label>
-                                        
+                                            </label>
+
 
                                         </div>
                                         <div className='card-highlight'>
@@ -122,7 +129,7 @@ export const WeatherScreen = () => {
                         </div>
                         <footer className='footer'>
 
-                          <small>Created by <a className='footer__link' href="https://github.com/ronaldoisc" target="blank" >ronaldoisc</a>   - devChallengues.io</small>
+                            <small>Created by <a className='footer__link' href="https://github.com/ronaldoisc" target="blank" >ronaldoisc</a>   - devChallengues.io</small>
                         </footer>
                     </div>
                 </div>
