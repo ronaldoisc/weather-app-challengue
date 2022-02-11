@@ -15,8 +15,8 @@ export const AppRouter = () => {
         <Router>
             <div>
             <Routes>
-                <Route exact path="/rick-morty-app/" element={<WeatherScreen/>}/>
-                <Route path="/*" element={<Navigate replace to="/rick-morty-app/" />} />
+                <Route exact path="/weather-app-challengue/" element={<WeatherScreen/>}/>
+                <Route path="/weather-app-challengue/*" element={<Navigate replace to="/weather-app-challengue/" />} />
             </Routes>
             </div>
         </Router>
